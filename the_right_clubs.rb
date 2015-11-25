@@ -28,6 +28,6 @@ print "\n"
 
 [:driver, :pitching_wedge, :putter].each do |required_club|
   if !possible_club_selections.include?(required_club)
-    puts "WARNING! This selection does not contain #{required_club.to_s.gsub("_", " ")}!"
+    puts "WARNING! This selection does not contain a #{required_club.to_s.gsub("_", " ")}!"
   end
 end
