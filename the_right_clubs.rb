@@ -19,3 +19,9 @@ available_clubs = [
 ]
 
 possible_club_selections = available_clubs.sample(REQUIRED_BAG_SIZE)
+
+puts "***Automatic Golf Club Advice:"
+
+possible_club_selections.each do |selection|
+  puts " "
+end
