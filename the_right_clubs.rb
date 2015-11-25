@@ -1,5 +1,3 @@
-REQUIRED_BAG_SIZE = 10
-
 available_clubs = [
   :two_iron,
   :three_iron,
@@ -18,10 +16,18 @@ available_clubs = [
   :putter
 ]
 
-possible_club_selections = available_clubs.sample(REQUIRED_BAG_SIZE)
+possible_club_selections = available_clubs.sample(10)
 
 puts "***Automatic Golf Club Advice:"
 
 possible_club_selections.each do |selection|
-  puts " "
+  puts "Use the #{selection.to_s.gsub("_", " ")}!"
+end
+
+print "\n"
+
+[:driver, :pitching_wedge, :putter].each do |required_club|
+  if !possible_club_selections.include?(required_club)
+    puts "WARNING! This selection does not contain #{required_club.to_s.gsub("_", " ")}!"
+  end
 end
